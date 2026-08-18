@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — CreatorLens</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0b0b10;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 420px;
+      background: #111119;
+      border: 1px solid #292936;
+      border-radius: 18px;
+      padding: 35px;
+    }
+
+    .logo {
+      text-align: center;
+      font-size: 25px;
+      font-weight: bold;
+      margin-bottom: 35px;
+    }
+
+    .logo span {
+      color: #7c5cff;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #9999a8;
+      margin-bottom: 28px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 18px;
+      border-radius: 9px;
+      border: 1px solid #30303d;
+      background: #191923;
+      color: white;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #7c5cff;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 9px;
+      background: #7c5cff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .signup {
+      text-align: center;
+      margin-top: 22px;
+      color: #9999a8;
+      font-size: 14px;
+    }
+
+    .signup a {
+      color: #9b87ff;
+      text-decoration: none;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      color: #777789;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+
+    <div class="logo">
+      Creator<span>Lens</span>
+    </div>
+
+    <h1>Welcome back</h1>
+
+    <p class="subtitle">
+      Sign in to analyze your videos.
+    </p>
+
+    <form>
+
+      <label for="email">Email</label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="you@example.com"
+        required
+      >
+
+      <label for="password">Password</label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Your password"
+        required
+      >
+
+      <button type="submit">
+        Login
+      </button>
+
+    </form>
+
+    <div class="signup">
+      Don't have an account?
+      <a href="#">Create account</a>
+    </div>
+
+    <a href="index.html" class="back">
+      ← Back to CreatorLens
+    </a>
+
+  </div>
+
+</body>
+</html>
