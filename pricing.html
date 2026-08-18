@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Pricing — CreatorLens</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #0b0b10;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid #22222c;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #7c5cff;
+    }
+
+    .back {
+      color: #9999a8;
+      font-size: 14px;
+    }
+
+    /* HEADER */
+
+    .header {
+      text-align: center;
+      padding: 70px 0 45px;
+    }
+
+    .header h1 {
+      font-size: 48px;
+      margin-bottom: 15px;
+    }
+
+    .header p {
+      color: #9999a8;
+      font-size: 17px;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    /* PRICING */
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding-bottom: 70px;
+    }
+
+    .card {
+      background: #111119;
+      border: 1px solid #292936;
+      border-radius: 18px;
+      padding: 30px;
+      position: relative;
+    }
+
+    .card.featured {
+      border-color: #7c5cff;
+    }
+
+    .popular {
+      position: absolute;
+      top: -13px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #7c5cff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: #888899;
+      font-size: 14px;
+      min-height: 42px;
+    }
+
+    .price {
+      font-size: 42px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    .price span {
+      font-size: 14px;
+      color: #888899;
+      font-weight: normal;
+    }
+
+    .features {
+      list-style: none;
+      margin: 25px 0;
+      min-height: 170px;
+    }
+
+    .features li {
+      color: #b0b0be;
+      margin: 13px 0;
+      font-size: 14px;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      border-radius: 9px;
+      text-align: center;
+      background: #7c5cff;
+      font-weight: bold;
+    }
+
+    .button.secondary {
+      background: #1a1a24;
+      border: 1px solid #30303d;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 700px;
+      margin: auto;
+      padding-bottom: 80px;
+    }
+
+    .faq h2 {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      background: #111119;
+      border: 1px solid #292936;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+
+    .faq-item h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      color: #9999a8;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .header h1 {
+        font-size: 38px;
+      }
+
+      .pricing {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: auto;
+      }
+
+      .features {
+        min-height: auto;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+
+    <div class="container nav">
+
+      <div class="logo">
+        Creator<span>Lens</span>
+      </div>
+
+      <a href="index.html" class="back">
+        ← Back
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- HEADER -->
+
+  <section class="header">
+
+    <div class="container">
+
+      <h1>
+        Simple pricing
+      </h1>
+
+      <p>
+        Start free and upgrade when you need
+        more video analysis.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="pricing">
+
+
+        <!-- FREE -->
+
+        <div class="card">
+
+          <h2>
+            Free
+          </h2>
+
+          <p class="description">
+            Try CreatorLens and understand
+            your video's weaknesses.
+          </p>
+
+          <div class="price">
+            ₹0
+            <span>/month</span>
+          </div>
+
+          <ul class="features">
+
+            <li>✓ 3 analyses per month</li>
+
+            <li>✓ Basic video score</li>
+
+            <li>✓ Strengths</li>
+
+            <li>✓ Weaknesses</li>
+
+            <li>✓ Basic recommendations</li>
+
+          </ul>
+
+          <a
+            href="login.html"
+            class="button secondary"
+          >
+            Start Free
+          </a>
+
+        </div>
+
+
+        <!-- CREATOR -->
+
+        <div class="card featured">
+
+          <div class="popular">
+            MOST POPULAR
+          </div>
+
+          <h2>
+            Creator
+          </h2>
+
+          <p class="description">
+            For creators who want detailed
+            feedback on every video.
+          </p>
+
+          <div class="price">
+            ₹299
+            <span>/month</span>
+          </div>
+
+          <ul class="features">
+
+            <li>✓ 30 analyses per month</li>
+
+            <li>✓ Detailed video analysis</li>
+
+            <li>✓ Hook analysis</li>
+
+            <li>✓ Pacing analysis</li>
+
+            <li>✓ Timestamp feedback</li>
+
+            <li>✓ Improvement recommendations</li>
+
+          </ul>
+
+          <a
+            href="login.html"
+            class="button"
+          >
+            Choose Creator
+          </a>
+
+        </div>
+
+
+        <!-- PRO -->
+
+        <div class="card">
+
+          <h2>
+            Pro
+          </h2>
+
+          <p class="description">
+            For serious creators and
+            professional video teams.
+          </p>
+
+          <div class="price">
+            ₹799
+            <span>/month</span>
+          </div>
+
+          <ul class="features">
+
+            <li>✓ 100 analyses per month</li>
+
+            <li>✓ Advanced analysis</li>
+
+            <li>✓ Video comparison</li>
+
+            <li>✓ Detailed recommendations</li>
+
+            <li>✓ Priority processing</li>
+
+          </ul>
+
+          <a
+            href="login.html"
+            class="button secondary"
+          >
+            Choose Pro
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="faq">
+
+        <h2>
+          Frequently asked questions
+        </h2>
+
+
+        <div class="faq-item">
+
+          <h3>
+            Can I use CreatorLens for free?
+          </h3>
+
+          <p>
+            Yes. The Free plan gives you
+            3 video analyses every month.
+          </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <h3>
+            Can I cancel my subscription?
+          </h3>
+
+          <p>
+            Yes. Paid subscriptions will
+            eventually be cancellable from
+            your account.
+          </p>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <h3>
+            Does CreatorLens guarantee more views?
+          </h3>
+
+          <p>
+            No. CreatorLens provides feedback
+            and recommendations to help improve
+            your videos. It cannot guarantee
+            views or viral performance.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+</body>
+
+</html>
