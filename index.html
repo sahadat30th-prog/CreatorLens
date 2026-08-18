@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CreatorLens — Improve Your Videos</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b0b10;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      padding: 20px 0;
+      border-bottom: 1px solid #22222c;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #7c5cff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: #b7b7c5;
+      font-size: 14px;
+    }
+
+    /* BUTTON */
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 10px;
+      background: #7c5cff;
+      color: white;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      background: #1a1a24;
+      border: 1px solid #30303d;
+      margin-left: 8px;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 90px 0 70px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 13px;
+      border-radius: 20px;
+      background: #17151f;
+      border: 1px solid #30294a;
+      color: #a995ff;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 8vw, 72px);
+      line-height: 1.05;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero h1 span {
+      color: #8b73ff;
+    }
+
+    .hero p {
+      color: #aaaab8;
+      max-width: 650px;
+      margin: 25px auto;
+      font-size: 18px;
+    }
+
+    /* DEMO CARD */
+
+    .demo {
+      margin: 30px auto 90px;
+      max-width: 800px;
+      background: #111119;
+      border: 1px solid #292936;
+      border-radius: 18px;
+      padding: 25px;
+    }
+
+    .video-box {
+      height: 250px;
+      border-radius: 12px;
+      background: #191923;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #777789;
+      margin-bottom: 20px;
+    }
+
+    .score {
+      font-size: 42px;
+      font-weight: bold;
+      color: #7c5cff;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .section-description {
+      text-align: center;
+      color: #9999a8;
+      max-width: 600px;
+      margin: 0 auto 45px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: #111119;
+      border: 1px solid #292936;
+      border-radius: 15px;
+      padding: 25px;
+    }
+
+    .card-icon {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #9999a8;
+      font-size: 14px;
+    }
+
+    /* PRICING */
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .price-card {
+      background: #111119;
+      border: 1px solid #292936;
+      border-radius: 15px;
+      padding: 30px;
+    }
+
+    .price-card.featured {
+      border: 1px solid #7c5cff;
+    }
+
+    .price-card h3 {
+      font-size: 22px;
+    }
+
+    .price {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+
+    .price small {
+      font-size: 14px;
+      color: #888899;
+    }
+
+    .price-card ul {
+      list-style: none;
+      margin: 20px 0;
+      color: #aaaab8;
+    }
+
+    .price-card li {
+      margin: 10px 0;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      background: #111119;
+      border: 1px solid #292936;
+      border-radius: 20px;
+      padding: 60px 20px;
+    }
+
+    .cta p {
+      color: #9999a8;
+      margin: 15px auto 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 0;
+      text-align: center;
+      color: #666675;
+      border-top: 1px solid #22222c;
+      margin-top: 70px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 0 50px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .btn-secondary {
+        margin-left: 0;
+      }
+
+      .features,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .demo {
+        margin-bottom: 50px;
+      }
+
+      .video-box {
+        height: 180px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="container nav-content">
+
+      <div class="logo">
+        Creator<span>Lens</span>
+      </div>
+
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#">Login</a>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="badge">
+          AI-Powered Video Feedback
+        </div>
+
+        <h1>
+          Know exactly what is
+          <span>weak</span> in your video.
+        </h1>
+
+        <p>
+          CreatorLens analyzes your video and shows
+          your strongest points, weakest moments,
+          and what you should improve.
+        </p>
+
+        <a href="#" class="btn">
+          Analyze My Video
+        </a>
+
+        <a href="#pricing" class="btn btn-secondary">
+          See Pricing
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- DEMO -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="demo">
+
+          <div class="video-box">
+            Video analysis preview
+          </div>
+
+          <h3>Overall Video Score</h3>
+
+          <div class="score">
+            76/100
+          </div>
+
+          <p style="color:#9999a8;">
+            Your video has a strong hook and clear message,
+            but the pacing becomes slow around 00:24.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section id="features">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Everything you need to improve
+        </h2>
+
+        <p class="section-description">
+          CreatorLens turns your video into clear,
+          actionable feedback.
+        </p>
+
+        <div class="features">
+
+          <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3>Hook Analysis</h3>
+            <p>
+              Find out whether your opening grabs
+              viewers' attention.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">📈</div>
+            <h3>Pacing Analysis</h3>
+            <p>
+              Discover slow or repetitive sections
+              that may lose viewers.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">💡</div>
+            <h3>Smart Recommendations</h3>
+            <p>
+              Get practical suggestions for improving
+              your next video.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🟢</div>
+            <h3>Strong Points</h3>
+            <p>
+              Understand what you're already doing well.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">🔴</div>
+            <h3>Weak Points</h3>
+            <p>
+              Find specific problems affecting
+              your video's quality.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">⏱️</div>
+            <h3>Timestamp Feedback</h3>
+            <p>
+              See exactly where problems happen
+              in your video.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRICING -->
+
+    <section id="pricing">
+
+      <div class="container">
+
+        <h2 class="section-title">
+          Simple pricing
+        </h2>
+
+        <p class="section-description">
+          Start free. Upgrade when you need more analysis.
+        </p>
+
+        <div class="pricing">
+
+          <!-- FREE -->
+
+          <div class="price-card">
+
+            <h3>Free</h3>
+
+            <div class="price">
+              ₹0
+              <small>/month</small>
+            </div>
+
+            <ul>
+              <li>✓ 3 analyses/month</li>
+              <li>✓ Basic score</li>
+              <li>✓ Strengths</li>
+              <li>✓ Weaknesses</li>
+            </ul>
+
+            <a href="#" class="btn">
+              Start Free
+            </a>
+
+          </div>
+
+
+          <!-- CREATOR -->
+
+          <div class="price-card featured">
+
+            <h3>Creator</h3>
+
+            <div class="price">
+              ₹299
+              <small>/month</small>
+            </div>
+
+            <ul>
+              <li>✓ 30 analyses/month</li>
+              <li>✓ Detailed analysis</li>
+              <li>✓ Timestamp feedback</li>
+              <li>✓ Improvement recommendations</li>
+            </ul>
+
+            <a href="#" class="btn">
+              Choose Creator
+            </a>
+
+          </div>
+
+
+          <!-- PRO -->
+
+          <div class="price-card">
+
+            <h3>Pro</h3>
+
+            <div class="price">
+              ₹799
+              <small>/month</small>
+            </div>
+
+            <ul>
+              <li>✓ 100 analyses/month</li>
+              <li>✓ Advanced analysis</li>
+              <li>✓ Video comparison</li>
+              <li>✓ Priority processing</li>
+            </ul>
+
+            <a href="#" class="btn">
+              Choose Pro
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="cta">
+
+          <h2>
+            Make your next video better.
+          </h2>
+
+          <p>
+            Stop guessing what is wrong with your videos.
+            Get clear feedback.
+          </p>
+
+          <a href="#" class="btn">
+            Analyze My Video
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+      © 2026 CreatorLens. All rights reserved.
+    </div>
+
+  </footer>
+
+</body>
+  </html>
